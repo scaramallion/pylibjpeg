@@ -38,19 +38,19 @@ jobs:
         pip install pydicom
         pytest --cov=pylibjpeg --cov-append
 
-    - name: Rerun pytest with -lj plugin
+    - name: Rerun pytest with dev -lj plugin
       run: |
 
         pip install git+https://github.com/pydicom/pylibjpeg-libjpeg
         pytest --cov=pylibjpeg --cov-append
 
-    - name: Rerun pytest with -oj plugin
+    - name: Rerun pytest with dev -oj plugin
       run: |
         pip uninstall -y pylibjpeg-libjpeg
         pip install git+https://github.com/pydicom/pylibjpeg-openjpeg
         pytest --cov=pylibjpeg --cov-append
 
-    - name: Rerun pytest with -rle plugin
+    - name: Rerun pytest with dev -rle plugin
       run: |
         pip uninstall -y pylibjpeg-libjpeg pylibjpeg-openjpeg
         pip install git+https://github.com/pydicom/pylibjpeg-rle
